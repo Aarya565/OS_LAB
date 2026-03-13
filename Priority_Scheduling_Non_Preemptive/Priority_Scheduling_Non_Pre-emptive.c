@@ -20,7 +20,6 @@ int main() {
     struct Process p[n];
 
     for(int i = 0; i < n; i++) {
-        // Automatically generate Process ID (P1, P2, etc.)
         sprintf(p[i].id, "P%d", i + 1);
 
         printf("\n--- Details for %s ---\n", p[i].id);
@@ -36,7 +35,6 @@ int main() {
     int current_time = 0;
     int completed_count = 0;
 
-    // Execution logic
     while(completed_count < n) {
         int highest_priority = 9999;
         int selected_index = -1;
@@ -62,8 +60,7 @@ int main() {
             completed_count++;
         }
     }
-
-    // Results table
+    
     printf("\n%-10s %-10s %-10s %-10s %-10s %-10s\n", "ID", "Arrival", "Burst", "Priority", "Wait", "Turnaround");
     for(int i = 0; i < n; i++) {
         printf("%-10s %-10d %-10d %-10d %-10d %-10d\n", p[i].id, p[i].arrival_time,
@@ -72,3 +69,4 @@ int main() {
 
     return 0;
 }
+
